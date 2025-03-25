@@ -22,8 +22,12 @@ export class TSVFileReader implements FileReader {
     }
 
     const parseBoolean = (str: string): boolean => {
-      if (str === "true") return true;
-      if (str === "false") return false;
+      if (str === 'true') {
+        return true;
+      }
+      if (str === 'false') {
+        return false;
+      }
       throw new Error(`Invalid boolean string: ${str}`);
     };
 
@@ -40,26 +44,26 @@ export class TSVFileReader implements FileReader {
       .filter((row) => row.trim().length > 0)
       .map((line) => line.split('\t'))
       .map(([
-          title, 
-          description, 
-          cityName, 
-          createdDate, 
-          previewImageUrl, 
-          imagesUrls, 
-          isFavorite, 
-          isPremium, 
-          housingType, 
-          rating, 
-          roomsCount, 
-          guestsCount, 
-          rentalCost, 
-          amenitiesString, 
-          ownerInfo, 
-          commentsCount, 
-          coordinates]) => ({
         title,
         description,
-        city: findOrThrow(Cities, city => city.name === cityName, "Unknown city!"),
+        cityName,
+        createdDate,
+        previewImageUrl,
+        imagesUrls,
+        isFavorite,
+        isPremium,
+        housingType,
+        rating,
+        roomsCount,
+        guestsCount,
+        rentalCost,
+        amenitiesString,
+        ownerInfo,
+        commentsCount,
+        coordinates]) => ({
+        title,
+        description,
+        city: findOrThrow(Cities, (city) => city.name === cityName, 'Unknown city!'),
         postDate: new Date(createdDate),
         previewImage: previewImageUrl,
         images: imagesUrls.split(';'),

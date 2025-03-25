@@ -3,7 +3,7 @@ import { HousingType } from './housing-type.enum.js';
 import { City } from './city.type.js';
 import { Coordinates } from './coordinates.type.js';
 
-export type Amenity = ("Breakfast" | "Air conditioning" | "Laptop friendly workspace" | "Baby seat" | "Washer" | "Towels" | "Fridge");
+export type Amenity = ('Breakfast' | 'Air conditioning' | 'Laptop friendly workspace' | 'Baby seat' | 'Washer' | 'Towels' | 'Fridge');
 
 export type RentalOffer = {
   title: string;

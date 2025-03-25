@@ -1,4 +1,4 @@
-import { Coordinates } from "./coordinates.type.js"
+import { Coordinates } from './coordinates.type.js';
 
 export type City = {
     name: string,
