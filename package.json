@@ -14,7 +14,8 @@
     "lint": "eslint src/ --ext .ts",
     "compile": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
-    "ts": "ts-node"
+    "ts": "ts-node",
+    "mock:server": "json-server ./src/mocks/mock-server-data.json --port 3123"
   },
   "devDependencies": {
     "@types/chalk-animation": "^1.6.3",
@@ -23,6 +24,7 @@
     "@typescript-eslint/parser": "6.7.0",
     "eslint": "8.49.0",
     "eslint-config-htmlacademy": "9.1.1",
+    "json-server": "^1.0.0-beta.3",
     "rimraf": "5.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
@@ -33,6 +35,7 @@
     "npm": ">=8"
   },
   "dependencies": {
-    "chalk-animation": "^2.0.3"
+    "chalk-animation": "^2.0.3",
+    "got": "^14.4.6"
   }
 }

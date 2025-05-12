@@ -1,3 +1,3 @@
-export interface FileReader {
-  read(): void;
+export interface FileReader<T> {
+  read(): AsyncIterable<T>;
 }
