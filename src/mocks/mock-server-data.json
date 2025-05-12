@@ -1,0 +1,93 @@
+{
+  "api": {
+    "titles": [
+      "Perfectly located Castro",
+      "House in countryside",
+      "Wood and stone place",
+      "The Joshua Tree House",
+      "Canal View Prinsengracht"
+    ],
+    "descriptions": [
+      "I am happy to welcome you to my apartment in the city center! Three words: location, cosy and chic!",
+      "Design interior in most sympathetic area! Complitely renovated, well-equipped, cosy studio in idyllic, over 100 years old wooden house. Calm street, fast connection to center and airport.",
+      "I am happy to welcome you to my apartment in the city center! Three words: location, cosy and chic!",
+      "I rent out a very sunny and bright apartment only 7 minutes walking distance to the metro station. The apartment has a spacious living room with a kitchen, one bedroom and a bathroom with mit bath. A terrace can be used in summer.",
+      "Discover daily local life in city center, friendly neighborhood, clandestine casino, karaoke, old-style artisans, art gallery and artist studio downstairs."
+    ],
+    "postDates": [
+      "2024-1-10T14:00:00",
+      "2024-2-10T14:00:00",
+      "2024-3-10T14:00:00",
+      "2024-4-10T14:00:00",
+      "2024-5-10T14:00:00",
+      "2024-6-10T14:00:00"
+    ],
+    "previewImages": [
+      "previewImage1.jpg",
+      "previewImage2.jpg",
+      "previewImage3.jpg",
+      "previewImage4.jpg",
+      "previewImage5.jpg",
+      "previewImage6.jpg"
+    ],
+    "images": [
+      "mainImage1.jpg",
+      "mainImage2.jpg",
+      "mainImage3.jpg",
+      "mainImage4.jpg",
+      "mainImage5.jpg",
+      "mainImage6.jpg"
+    ],
+    "housingTypes": [
+      "apartment",
+      "house",
+      "room",
+      "hotel"
+    ],
+    "amenities": [
+      "Breakfast",
+      "Air conditioning",
+      "Laptop friendly workspace",
+      "Baby seat",
+      "Washer",
+      "Towels",
+      "Fridge"
+    ],
+    "userNames": [
+      "Иван Иванов",
+      "Олег Сидоров",
+      "Пьер Безухов",
+      "Роланд Дискейн",
+      "Холи Гибни",
+      "Джек Торренс",
+      "Антон Городецкий",
+      "Борис Гесер",
+      "Рокки Бальбоа",
+      "Джон Смит"
+    ],
+    "emails": [
+      "snow@pisem.local",
+      "president@dka.local",
+      "fish@big.local",
+      "test@pisem.local",
+      "freedom@pisem.local",
+      "rolan@pochta.local",
+      "author@mir.local",
+      "test@lost.loca",
+      "kujo-fan@story.local"
+    ],
+    "avatars": [
+      "userAvatar1.jpg",
+      "userAvatar2.jpg",
+      "userAvatar3.jpg",
+      "userAvatar4.jpg",
+      "userAvatar5.jpg",
+      "userAvatar6.jpg"
+    ],
+    "userTypes": [
+      "Default",
+      "Pro"
+    ]
+  }
+}
+  
