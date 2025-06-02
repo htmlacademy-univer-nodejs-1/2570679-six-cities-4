@@ -6,7 +6,7 @@ import { User } from '../../types/user.type.js';
 
 export class OfferRdo {
     @Expose()
-    public title!: string;
+  public title!: string;
 
     @Expose()
     public description!: string;
