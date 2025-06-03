@@ -2,7 +2,7 @@ import { DocumentType, types } from '@typegoose/typegoose';
 import { injectable, inject } from 'inversify';
 import { CommentEntity } from './comment.entity.js';
 import { Component } from '../../types/component.enum.js';
-import CreateCommentDto from './create-comment.dto.js';
+import CreateCommentDto from './dto/create-comment.dto.js';
 import { CommentService } from './comment-service.interface.js';
 
 @injectable()
