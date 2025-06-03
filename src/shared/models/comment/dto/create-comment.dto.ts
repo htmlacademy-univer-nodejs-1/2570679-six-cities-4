@@ -9,7 +9,6 @@ export default class CreateCommentDto {
   @IsMongoId({message: CreateCommentValidationMessages.offerId.invalidFormat})
   public offerId!: string;
 
-  @IsMongoId({message: CreateCommentValidationMessages.userId.invalidFormat})
   public userId!: string;
 
   @IsDateString({}, {message: CreateCommentValidationMessages.date.invalidFormat})
