@@ -50,6 +50,5 @@ export class CreateOfferDto {
   @IsString({ each: true })
   public amenities!: string[];
 
-  @IsMongoId({ message: RentOfferValidationMessage.ownerId.invalidId })
   public ownerId!: string;
 }

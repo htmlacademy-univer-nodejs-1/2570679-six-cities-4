@@ -15,6 +15,7 @@ import { OfferIdParam } from '../../types/offer-id-param.js';
 import { ValidateDtoMiddleware } from '../../libs/rest/middleware/validate-dto.middleware.js';
 import { ValidateObjectIdMiddleware } from '../../libs/rest/middleware/validate-objectid.middleware.js';
 import { DocumentExistsMiddleware } from '../../libs/rest/middleware/document-exists.middleware.js';
+import { PrivateRouteMiddleware } from '../../libs/rest/middleware/private-route.middleware.js';
 
 @injectable()
 export default class CommentController extends BaseController {
@@ -40,6 +41,7 @@ export default class CommentController extends BaseController {
       method: HttpMethod.Post,
       handler: this.create,
       middlewares: [
+        new PrivateRouteMiddleware(),
         new ValidateDtoMiddleware(CreateCommentDto),
       ],
     });
@@ -55,7 +57,7 @@ export default class CommentController extends BaseController {
   }
 
   public async create(
-    { body }: Request<unknown, unknown, CreateCommentDto>,
+    { body, tokenPayload }: Request<unknown, unknown, CreateCommentDto>,
     res: Response,
   ): Promise<void> {
     const existsOffer = await this.offerService.findById(body.offerId);
@@ -68,7 +70,7 @@ export default class CommentController extends BaseController {
       );
     }
 
-    const result = await this.commentService.create({ ...body });
+    const result = await this.commentService.create({ ...body, userId: tokenPayload.id });
     this.created(res, fillDTO(CommentRdo, result));
   }
 }
