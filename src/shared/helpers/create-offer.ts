@@ -47,7 +47,7 @@ export function createOffer(offerData : string) : RentalOffer {
     guestsCount: Number.parseInt(guestsCount, 10),
     rentalCost: Number.parseInt(rentalCost, 10),
     amenities: amenitiesString.split(';') as Amenity[],
-    owner: (() => {
+    author: (() => {
       const [name, email, avatarPath, userType] = ownerInfo.split(';');
       return { name, email, avatarPath, userType: userType as UserType };
     })(),

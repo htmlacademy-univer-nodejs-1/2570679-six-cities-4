@@ -20,7 +20,7 @@ export type RentalOffer = {
   guestsCount: number;
   rentalCost: number;
   amenities: Amenity[];
-  owner: User;
+  author: User;
   commentsCount: number;
   coordinates: Coordinates
 }
