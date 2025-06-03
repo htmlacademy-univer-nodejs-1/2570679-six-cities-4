@@ -1,4 +1,4 @@
-import { ArrayMaxSize, ArrayMinSize, IsArray, IsBoolean, IsDateString, IsInt, IsMongoId, IsString, Max, MaxLength, Min, MinLength } from 'class-validator';
+import { ArrayMaxSize, ArrayMinSize, IsArray, IsBoolean, IsDateString, IsInt, IsString, Max, MaxLength, Min, MinLength } from 'class-validator';
 import { RentOfferValidationMessage } from './offer.messages.js';
 
 export class CreateOfferDto {

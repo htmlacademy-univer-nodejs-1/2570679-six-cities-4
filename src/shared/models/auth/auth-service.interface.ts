@@ -1,4 +1,4 @@
-import {  UserEntity } from '../user/index.js';
+import { UserEntity } from '../user/index.js';
 import { LoginUserDto } from '../user/dto/login-user.dto.js';
 import { LogoutUserDto } from '../user/dto/logout-user.dto.js';
 
