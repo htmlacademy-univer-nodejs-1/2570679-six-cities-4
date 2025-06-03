@@ -14,6 +14,7 @@ import { CommentRdo } from './comment.rdo.js';
 import { OfferIdParam } from '../../types/offer-id-param.js';
 import { ValidateDtoMiddleware } from '../../libs/rest/middleware/validate-dto.middleware.js';
 import { ValidateObjectIdMiddleware } from '../../libs/rest/middleware/validate-objectid.middleware.js';
+import { DocumentExistsMiddleware } from '../../libs/rest/middleware/document-exists.middleware.js';
 
 @injectable()
 export default class CommentController extends BaseController {
@@ -31,6 +32,7 @@ export default class CommentController extends BaseController {
       handler: this.index,
       middlewares: [
         new ValidateObjectIdMiddleware('offerId'),
+        new DocumentExistsMiddleware(this.offerService, 'Offer', 'offerId'),
       ],
     });
     this.addRoute({

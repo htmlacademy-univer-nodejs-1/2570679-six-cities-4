@@ -16,6 +16,7 @@ import { HttpError } from '../../libs/rest/index.js';
 import { CommentRdo } from '../comment/comment.rdo.js';
 import { ValidateObjectIdMiddleware } from '../../libs/rest/middleware/validate-objectid.middleware.js';
 import { ValidateDtoMiddleware } from '../../libs/rest/middleware/validate-dto.middleware.js';
+import { DocumentExistsMiddleware } from '../../libs/rest/middleware/document-exists.middleware.js';
 
 
 @injectable()
@@ -43,6 +44,7 @@ export default class OfferController extends BaseController {
       middlewares: [
         new ValidateDtoMiddleware(CreateOfferDto),
         new ValidateObjectIdMiddleware('offerId'),
+        new DocumentExistsMiddleware(this.offersService, 'Offer', 'offerId'),
       ],
     });
     this.addRoute({
@@ -51,6 +53,7 @@ export default class OfferController extends BaseController {
       handler: this.delete,
       middlewares: [
         new ValidateObjectIdMiddleware('offerId'),
+        new DocumentExistsMiddleware(this.offersService, 'Offer', 'offerId'),
       ],
     });
     this.addRoute({
