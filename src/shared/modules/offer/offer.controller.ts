@@ -122,19 +122,12 @@ export default class OfferController extends BaseController {
     this.created(res, fillDTO(OfferDetailsRdo, result));
   }
 
-  public async deleteOffer({ params, tokenPayload}: Request<OfferIdParam>, res: Response
+  public async deleteOffer({ params }: Request<OfferIdParam>, res: Response
   ): Promise<void> {
     const { offerId } = params;
     const offerToDelete = await this.offersService.findById(params.offerId);
     if (!offerToDelete) {
       throw new HttpError(StatusCodes.NOT_FOUND, `Offer with id ${offerId} not found.`, 'OfferController');
-    }
-    if (offerToDelete?.userId.id !== tokenPayload.id) {
-      throw new HttpError(
-        StatusCodes.FORBIDDEN,
-        `Access denied. Unable to delete offer ${offerId} which user ${tokenPayload.id} does not have delete access`,
-        'OfferController',
-      );
     }
 
     await this.commentService.deleteByOfferId(offerId);
@@ -142,19 +135,12 @@ export default class OfferController extends BaseController {
     this.ok(res, fillDTO(OfferDetailsRdo, deletedOffer));
   }
 
-  public async updateOffer({ body, params, tokenPayload }: Request<OfferIdParam, unknown, OfferDto>, res: Response
+  public async updateOffer({ body, params }: Request<OfferIdParam, unknown, OfferDto>, res: Response
   ): Promise<void> {
     const { offerId } = params;
     const offerToUpdate = await this.offersService.findById(params.offerId);
     if (!offerToUpdate) {
       throw new HttpError(StatusCodes.NOT_FOUND, `Offer with id ${offerId} not found.`, 'OfferController');
-    }
-    if (offerToUpdate?.userId.id !== tokenPayload.id) {
-      throw new HttpError(
-        StatusCodes.FORBIDDEN,
-        `Access denied. Unable to update offer ${offerId} which user ${tokenPayload.id} does not have update access`,
-        'OfferController',
-      );
     }
 
     const updatedOffer = await this.offersService.updateById(offerId, body);
