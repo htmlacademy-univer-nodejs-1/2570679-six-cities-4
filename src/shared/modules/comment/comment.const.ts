@@ -1,0 +1,1 @@
+export const MAX_COMMENTS_COUNT_TO_RETURN = 50;

@@ -49,7 +49,7 @@ export function createOffer(offerData : string) : RentalOffer {
     amenities: amenitiesString.split(';') as Amenity[],
     author: (() => {
       const [name, email, avatarPath, userType] = ownerInfo.split(';');
-      return { name, email, avatarPath, userType: userType as UserType };
+      return { name, email, avatarPath, userType: userType as UserType, password: '' };
     })(),
     commentsCount: Number.parseInt(commentsCount, 10),
     coordinates: (() => {
